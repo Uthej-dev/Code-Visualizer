@@ -1,0 +1,31 @@
+{
+ "code": "x = 1\nif x > 0\n    print(x)\n",
+ "trace": {
+  "version": 1,
+  "status": "error",
+  "steps": [],
+  "output": "",
+  "error": {
+   "phase": "syntax",
+   "type": "SyntaxError",
+   "message": "expected ':'",
+   "line": 2,
+   "column": 9,
+   "hint": null
+  },
+  "truncated": false,
+  "limitReason": null,
+  "limits": {
+   "max_steps": 1000,
+   "max_output_chars": 20000,
+   "max_stack_depth": 100,
+   "max_heap_objects": 200,
+   "max_collection_items": 100,
+   "max_trace_bytes": 8000000
+  },
+  "stats": {
+   "stepCount": 0,
+   "durationMs": 0
+  }
+ }
+}

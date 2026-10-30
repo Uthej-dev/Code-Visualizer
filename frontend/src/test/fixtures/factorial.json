@@ -1,0 +1,1861 @@
+{
+ "code": "# Recursion: a function that calls itself with a smaller problem.\ndef factorial(n):\n    if n <= 1:\n        return 1\n    smaller = factorial(n - 1)\n    return n * smaller\n\nanswer = factorial(4)\nprint(\"4! =\", answer)\n",
+ "trace": {
+  "version": 1,
+  "status": "ok",
+  "steps": [
+   {
+    "index": 0,
+    "eventId": "e1",
+    "event": "line",
+    "line": 2,
+    "endLine": 2,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 2,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "factorial",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "ref",
+       "id": "o1"
+      }
+     }
+    ],
+    "heapChanges": [
+     {
+      "id": "o1",
+      "kind": "created",
+      "changed": [],
+      "added": [],
+      "removed": []
+     }
+    ],
+    "summary": "Define function factorial()",
+    "explanation": [
+     "Python creates a function object named factorial (parameters: n).",
+     "The body is stored, not run. It runs each time the function is called."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 1,
+    "eventId": "e2",
+    "event": "call",
+    "line": 2,
+    "endLine": 2,
+    "frameId": "f1",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 2,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "f1",
+      "name": "n",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "4"
+      }
+     }
+    ],
+    "heapChanges": [],
+    "summary": "Call factorial(n=4)",
+    "explanation": [
+     "Line 8 pauses while factorial runs.",
+     "A new frame is created for factorial. It has its own local variables, separate from the caller's.",
+     "Parameter n receives the value 4."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 2,
+    "eventId": "e3",
+    "event": "line",
+    "line": 3,
+    "endLine": 3,
+    "frameId": "f1",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 3,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Check condition: n <= 1",
+    "explanation": [
+     "Read n \u2192 4",
+     "Compare 4 <= 1 \u2192 False",
+     "The condition is False, so Python skips the indented block."
+    ],
+    "exception": null,
+    "condition": {
+     "result": false
+    },
+    "loop": null
+   },
+   {
+    "index": 3,
+    "eventId": "e4",
+    "event": "call",
+    "line": 2,
+    "endLine": 2,
+    "frameId": "f2",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f2",
+      "name": "factorial",
+      "line": 2,
+      "isGlobal": false,
+      "depth": 2,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "f2",
+      "name": "n",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "3"
+      }
+     }
+    ],
+    "heapChanges": [],
+    "summary": "Call factorial(n=3)",
+    "explanation": [
+     "Line 5 pauses while factorial runs.",
+     "A new frame is created for factorial. It has its own local variables, separate from the caller's.",
+     "Parameter n receives the value 3.",
+     "factorial is already running further down the call stack, so this is a recursive call. Each call has its own copy of the parameters."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 4,
+    "eventId": "e5",
+    "event": "line",
+    "line": 3,
+    "endLine": 3,
+    "frameId": "f2",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f2",
+      "name": "factorial",
+      "line": 3,
+      "isGlobal": false,
+      "depth": 2,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Check condition: n <= 1",
+    "explanation": [
+     "Read n \u2192 3",
+     "Compare 3 <= 1 \u2192 False",
+     "The condition is False, so Python skips the indented block."
+    ],
+    "exception": null,
+    "condition": {
+     "result": false
+    },
+    "loop": null
+   },
+   {
+    "index": 5,
+    "eventId": "e6",
+    "event": "call",
+    "line": 2,
+    "endLine": 2,
+    "frameId": "f3",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f2",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 2,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f3",
+      "name": "factorial",
+      "line": 2,
+      "isGlobal": false,
+      "depth": 3,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "f3",
+      "name": "n",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "2"
+      }
+     }
+    ],
+    "heapChanges": [],
+    "summary": "Call factorial(n=2)",
+    "explanation": [
+     "Line 5 pauses while factorial runs.",
+     "A new frame is created for factorial. It has its own local variables, separate from the caller's.",
+     "Parameter n receives the value 2.",
+     "factorial is already running further down the call stack, so this is a recursive call. Each call has its own copy of the parameters."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 6,
+    "eventId": "e7",
+    "event": "line",
+    "line": 3,
+    "endLine": 3,
+    "frameId": "f3",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f2",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 2,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f3",
+      "name": "factorial",
+      "line": 3,
+      "isGlobal": false,
+      "depth": 3,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Check condition: n <= 1",
+    "explanation": [
+     "Read n \u2192 2",
+     "Compare 2 <= 1 \u2192 False",
+     "The condition is False, so Python skips the indented block."
+    ],
+    "exception": null,
+    "condition": {
+     "result": false
+    },
+    "loop": null
+   },
+   {
+    "index": 7,
+    "eventId": "e8",
+    "event": "call",
+    "line": 2,
+    "endLine": 2,
+    "frameId": "f4",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f2",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 2,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f3",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 3,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "2"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f4",
+      "name": "factorial",
+      "line": 2,
+      "isGlobal": false,
+      "depth": 4,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "1"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "f4",
+      "name": "n",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "1"
+      }
+     }
+    ],
+    "heapChanges": [],
+    "summary": "Call factorial(n=1)",
+    "explanation": [
+     "Line 5 pauses while factorial runs.",
+     "A new frame is created for factorial. It has its own local variables, separate from the caller's.",
+     "Parameter n receives the value 1.",
+     "factorial is already running further down the call stack, so this is a recursive call. Each call has its own copy of the parameters."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 8,
+    "eventId": "e9",
+    "event": "line",
+    "line": 3,
+    "endLine": 3,
+    "frameId": "f4",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f2",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 2,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f3",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 3,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "2"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f4",
+      "name": "factorial",
+      "line": 3,
+      "isGlobal": false,
+      "depth": 4,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "1"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Check condition: n <= 1",
+    "explanation": [
+     "Read n \u2192 1",
+     "Compare 1 <= 1 \u2192 True",
+     "The condition is True, so Python runs the indented block below it."
+    ],
+    "exception": null,
+    "condition": {
+     "result": true
+    },
+    "loop": null
+   },
+   {
+    "index": 9,
+    "eventId": "e10",
+    "event": "return",
+    "line": 4,
+    "endLine": 4,
+    "frameId": "f4",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f2",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 2,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f3",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 3,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "2"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f4",
+      "name": "factorial",
+      "line": 4,
+      "isGlobal": false,
+      "depth": 4,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "1"
+        }
+       }
+      ],
+      "returnValue": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "1"
+      }
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "factorial(n=1) returns 1",
+    "explanation": [
+     "factorial returns 1 to line 5.",
+     "The frame for factorial is removed; its local variables disappear."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 10,
+    "eventId": "e11",
+    "event": "line",
+    "line": 5,
+    "endLine": 5,
+    "frameId": "f3",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f2",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 2,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f3",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 3,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "2"
+        }
+       },
+       {
+        "name": "smaller",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "1"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "f3",
+      "name": "smaller",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "1"
+      }
+     }
+    ],
+    "heapChanges": [],
+    "summary": "Assignment: smaller = factorial(n - 1)",
+    "explanation": [
+     "factorial(n=1) returned 1.",
+     "Create variable smaller and store 1 in it."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 11,
+    "eventId": "e12",
+    "event": "return",
+    "line": 6,
+    "endLine": 6,
+    "frameId": "f3",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f2",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 2,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f3",
+      "name": "factorial",
+      "line": 6,
+      "isGlobal": false,
+      "depth": 3,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "2"
+        }
+       },
+       {
+        "name": "smaller",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "1"
+        }
+       }
+      ],
+      "returnValue": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "2"
+      }
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "factorial(n=2) returns 2",
+    "explanation": [
+     "Read n \u2192 2",
+     "Read smaller \u2192 1",
+     "Compute 2 * 1 \u2192 2",
+     "factorial returns 2 to line 5.",
+     "The frame for factorial is removed; its local variables disappear."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 12,
+    "eventId": "e13",
+    "event": "line",
+    "line": 5,
+    "endLine": 5,
+    "frameId": "f2",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f2",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 2,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       },
+       {
+        "name": "smaller",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "f2",
+      "name": "smaller",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "2"
+      }
+     }
+    ],
+    "heapChanges": [],
+    "summary": "Assignment: smaller = factorial(n - 1)",
+    "explanation": [
+     "factorial(n=2) returned 2.",
+     "Create variable smaller and store 2 in it."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 13,
+    "eventId": "e14",
+    "event": "return",
+    "line": 6,
+    "endLine": 6,
+    "frameId": "f2",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f2",
+      "name": "factorial",
+      "line": 6,
+      "isGlobal": false,
+      "depth": 2,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       },
+       {
+        "name": "smaller",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "2"
+        }
+       }
+      ],
+      "returnValue": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "6"
+      }
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "factorial(n=3) returns 6",
+    "explanation": [
+     "Read n \u2192 3",
+     "Read smaller \u2192 2",
+     "Compute 3 * 2 \u2192 6",
+     "factorial returns 6 to line 5.",
+     "The frame for factorial is removed; its local variables disappear."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 14,
+    "eventId": "e15",
+    "event": "line",
+    "line": 5,
+    "endLine": 5,
+    "frameId": "f1",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 5,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       },
+       {
+        "name": "smaller",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "6"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "f1",
+      "name": "smaller",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "6"
+      }
+     }
+    ],
+    "heapChanges": [],
+    "summary": "Assignment: smaller = factorial(n - 1)",
+    "explanation": [
+     "factorial(n=3) returned 6.",
+     "Create variable smaller and store 6 in it."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 15,
+    "eventId": "e16",
+    "event": "return",
+    "line": 6,
+    "endLine": 6,
+    "frameId": "f1",
+    "funcName": "factorial",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     },
+     {
+      "id": "f1",
+      "name": "factorial",
+      "line": 6,
+      "isGlobal": false,
+      "depth": 1,
+      "locals": [
+       {
+        "name": "n",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "4"
+        }
+       },
+       {
+        "name": "smaller",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "6"
+        }
+       }
+      ],
+      "returnValue": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "24"
+      }
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "factorial(n=4) returns 24",
+    "explanation": [
+     "Read n \u2192 4",
+     "Read smaller \u2192 6",
+     "Compute 4 * 6 \u2192 24",
+     "factorial returns 24 to line 8.",
+     "The frame for factorial is removed; its local variables disappear."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 16,
+    "eventId": "e17",
+    "event": "line",
+    "line": 8,
+    "endLine": 8,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "answer",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "24"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "answer",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "24"
+      }
+     }
+    ],
+    "heapChanges": [],
+    "summary": "Assignment: answer = factorial(4)",
+    "explanation": [
+     "factorial(n=4) returned 24.",
+     "Create variable answer and store 24 in it."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 17,
+    "eventId": "e18",
+    "event": "line",
+    "line": 9,
+    "endLine": 9,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 9,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "answer",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "24"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 8,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Print to the output",
+    "explanation": [
+     "Read answer \u2192 24",
+     "Printed to the output: '4! = 24'"
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 18,
+    "eventId": "e19",
+    "event": "finish",
+    "line": null,
+    "endLine": null,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": null,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "factorial",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "answer",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "24"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "function",
+      "name": "factorial",
+      "params": [
+       "n"
+      ],
+      "line": 2
+     }
+    },
+    "outputLength": 8,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Program finished",
+    "explanation": [
+     "Every line has run and the program has ended.",
+     "It printed 1 line of output."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   }
+  ],
+  "output": "4! = 24\n",
+  "error": null,
+  "truncated": false,
+  "limitReason": null,
+  "limits": {
+   "max_steps": 1000,
+   "max_output_chars": 20000,
+   "max_stack_depth": 100,
+   "max_heap_objects": 200,
+   "max_collection_items": 100,
+   "max_trace_bytes": 8000000
+  },
+  "stats": {
+   "stepCount": 19,
+   "durationMs": 0,
+   "isolation": [
+    "RLIMIT_CPU",
+    "RLIMIT_FSIZE",
+    "RLIMIT_CORE",
+    "RLIMIT_NOFILE",
+    "RLIMIT_NPROC"
+   ]
+  }
+ }
+}

@@ -1,0 +1,1435 @@
+{
+ "code": "# Lists are mutable: changing one through any name changes the same object.\nscores = [70, 85, 90]\nbackup = scores          # same list, two names\ncopy = list(scores)      # a brand-new list\n\nscores.append(100)\nscores[0] = 75\nbackup.remove(85)\n\nprint(\"scores:\", scores)\nprint(\"backup:\", backup)\nprint(\"copy:  \", copy)\n\nscores = [1, 2, 3]       # re-binding: scores now names a different list\nprint(\"backup still has\", backup)\n",
+ "trace": {
+  "version": 1,
+  "status": "ok",
+  "steps": [
+   {
+    "index": 0,
+    "eventId": "e1",
+    "event": "line",
+    "line": 2,
+    "endLine": 2,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 2,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "scores",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "scores",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "ref",
+       "id": "o1"
+      }
+     }
+    ],
+    "heapChanges": [
+     {
+      "id": "o1",
+      "kind": "created",
+      "changed": [],
+      "added": [],
+      "removed": []
+     }
+    ],
+    "summary": "Assignment: scores = [70, 85, 90]",
+    "explanation": [
+     "Create variable scores, which refers to a list: [70, 85, 90]"
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 1,
+    "eventId": "e2",
+    "event": "line",
+    "line": 3,
+    "endLine": 3,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 3,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "scores",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "backup",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "backup",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "ref",
+       "id": "o1"
+      }
+     }
+    ],
+    "heapChanges": [],
+    "summary": "Assignment: backup = scores",
+    "explanation": [
+     "Read scores \u2192 [70, 85, 90]",
+     "Create variable backup. It refers to the same list as scores \u2014 no copy is made, both names share one object."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 2,
+    "eventId": "e3",
+    "event": "line",
+    "line": 4,
+    "endLine": 4,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 4,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "scores",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "backup",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "copy",
+        "value": {
+         "kind": "ref",
+         "id": "o2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     },
+     "o2": {
+      "id": "o2",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "copy",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "ref",
+       "id": "o2"
+      }
+     }
+    ],
+    "heapChanges": [
+     {
+      "id": "o2",
+      "kind": "created",
+      "changed": [],
+      "added": [],
+      "removed": []
+     }
+    ],
+    "summary": "Assignment: copy = list(scores)",
+    "explanation": [
+     "Create variable copy, which refers to a list: [70, 85, 90]"
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 3,
+    "eventId": "e4",
+    "event": "line",
+    "line": 6,
+    "endLine": 6,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 6,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "scores",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "backup",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "copy",
+        "value": {
+         "kind": "ref",
+         "id": "o2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "100"
+       }
+      ],
+      "length": 4,
+      "truncated": false
+     },
+     "o2": {
+      "id": "o2",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "scores",
+      "kind": "mutated",
+      "before": {
+       "kind": "ref",
+       "id": "o1"
+      },
+      "after": {
+       "kind": "ref",
+       "id": "o1"
+      }
+     },
+     {
+      "frameId": "global",
+      "name": "backup",
+      "kind": "mutated",
+      "before": {
+       "kind": "ref",
+       "id": "o1"
+      },
+      "after": {
+       "kind": "ref",
+       "id": "o1"
+      }
+     }
+    ],
+    "heapChanges": [
+     {
+      "id": "o1",
+      "kind": "mutated",
+      "changed": [],
+      "added": [
+       "3"
+      ],
+      "removed": []
+     }
+    ],
+    "summary": "Call scores.append(\u2026)",
+    "explanation": [
+     "The list scores was modified in place: added [3] = 100. Now: [70, 85, 90, 100]. backup refers to the same object, so it sees this change too."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 4,
+    "eventId": "e5",
+    "event": "line",
+    "line": 7,
+    "endLine": 7,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 7,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "scores",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "backup",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "copy",
+        "value": {
+         "kind": "ref",
+         "id": "o2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "75"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "100"
+       }
+      ],
+      "length": 4,
+      "truncated": false
+     },
+     "o2": {
+      "id": "o2",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "scores",
+      "kind": "mutated",
+      "before": {
+       "kind": "ref",
+       "id": "o1"
+      },
+      "after": {
+       "kind": "ref",
+       "id": "o1"
+      }
+     },
+     {
+      "frameId": "global",
+      "name": "backup",
+      "kind": "mutated",
+      "before": {
+       "kind": "ref",
+       "id": "o1"
+      },
+      "after": {
+       "kind": "ref",
+       "id": "o1"
+      }
+     }
+    ],
+    "heapChanges": [
+     {
+      "id": "o1",
+      "kind": "mutated",
+      "changed": [
+       "0"
+      ],
+      "added": [],
+      "removed": []
+     }
+    ],
+    "summary": "Assignment: scores[0] = 75",
+    "explanation": [
+     "The list scores was modified in place: changed [0] = 75. Now: [75, 85, 90, 100]. backup refers to the same object, so it sees this change too."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 5,
+    "eventId": "e6",
+    "event": "line",
+    "line": 8,
+    "endLine": 8,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 8,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "scores",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "backup",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "copy",
+        "value": {
+         "kind": "ref",
+         "id": "o2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "75"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "100"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     },
+     "o2": {
+      "id": "o2",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "scores",
+      "kind": "mutated",
+      "before": {
+       "kind": "ref",
+       "id": "o1"
+      },
+      "after": {
+       "kind": "ref",
+       "id": "o1"
+      }
+     },
+     {
+      "frameId": "global",
+      "name": "backup",
+      "kind": "mutated",
+      "before": {
+       "kind": "ref",
+       "id": "o1"
+      },
+      "after": {
+       "kind": "ref",
+       "id": "o1"
+      }
+     }
+    ],
+    "heapChanges": [
+     {
+      "id": "o1",
+      "kind": "mutated",
+      "changed": [
+       "1",
+       "2"
+      ],
+      "added": [],
+      "removed": [
+       "3"
+      ]
+     }
+    ],
+    "summary": "Call backup.remove(\u2026)",
+    "explanation": [
+     "The list backup was modified in place: changed [1] = 90; changed [2] = 100; removed [3]. Now: [75, 90, 100]. scores refers to the same object, so it sees this change too."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 6,
+    "eventId": "e7",
+    "event": "line",
+    "line": 10,
+    "endLine": 10,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 10,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "scores",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "backup",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "copy",
+        "value": {
+         "kind": "ref",
+         "id": "o2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "75"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "100"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     },
+     "o2": {
+      "id": "o2",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 22,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Print to the output",
+    "explanation": [
+     "Read scores \u2192 [75, 90, 100]",
+     "Printed to the output: 'scores: [75, 90, 100]'"
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 7,
+    "eventId": "e8",
+    "event": "line",
+    "line": 11,
+    "endLine": 11,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 11,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "scores",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "backup",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "copy",
+        "value": {
+         "kind": "ref",
+         "id": "o2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "75"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "100"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     },
+     "o2": {
+      "id": "o2",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 44,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Print to the output",
+    "explanation": [
+     "Read backup \u2192 [75, 90, 100]",
+     "Printed to the output: 'backup: [75, 90, 100]'"
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 8,
+    "eventId": "e9",
+    "event": "line",
+    "line": 12,
+    "endLine": 12,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 12,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "scores",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "backup",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "copy",
+        "value": {
+         "kind": "ref",
+         "id": "o2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "75"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "100"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     },
+     "o2": {
+      "id": "o2",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 65,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Print to the output",
+    "explanation": [
+     "Read copy \u2192 [70, 85, 90]",
+     "Printed to the output: 'copy:   [70, 85, 90]'"
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 9,
+    "eventId": "e10",
+    "event": "line",
+    "line": 14,
+    "endLine": 14,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 14,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "scores",
+        "value": {
+         "kind": "ref",
+         "id": "o3"
+        }
+       },
+       {
+        "name": "backup",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "copy",
+        "value": {
+         "kind": "ref",
+         "id": "o2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o3": {
+      "id": "o3",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "1"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "2"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "3"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     },
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "75"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "100"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     },
+     "o2": {
+      "id": "o2",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 65,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "scores",
+      "kind": "rebound",
+      "before": {
+       "kind": "ref",
+       "id": "o1"
+      },
+      "after": {
+       "kind": "ref",
+       "id": "o3"
+      }
+     }
+    ],
+    "heapChanges": [
+     {
+      "id": "o3",
+      "kind": "created",
+      "changed": [],
+      "added": [],
+      "removed": []
+     }
+    ],
+    "summary": "Assignment: scores = [1, 2, 3]",
+    "explanation": [
+     "scores now refers to a different list: [1, 2, 3] (the variable was re-bound, not modified in place)."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 10,
+    "eventId": "e11",
+    "event": "line",
+    "line": 15,
+    "endLine": 15,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 15,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "scores",
+        "value": {
+         "kind": "ref",
+         "id": "o3"
+        }
+       },
+       {
+        "name": "backup",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "copy",
+        "value": {
+         "kind": "ref",
+         "id": "o2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o3": {
+      "id": "o3",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "1"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "2"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "3"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     },
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "75"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "100"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     },
+     "o2": {
+      "id": "o2",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 96,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Print to the output",
+    "explanation": [
+     "Read backup \u2192 [75, 90, 100]",
+     "Printed to the output: 'backup still has [75, 90, 100]'"
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 11,
+    "eventId": "e12",
+    "event": "finish",
+    "line": null,
+    "endLine": null,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": null,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "scores",
+        "value": {
+         "kind": "ref",
+         "id": "o3"
+        }
+       },
+       {
+        "name": "backup",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "copy",
+        "value": {
+         "kind": "ref",
+         "id": "o2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o3": {
+      "id": "o3",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "1"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "2"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "3"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     },
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "75"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "100"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     },
+     "o2": {
+      "id": "o2",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "70"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "85"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "90"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 96,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Program finished",
+    "explanation": [
+     "Every line has run and the program has ended.",
+     "It printed 4 lines of output."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   }
+  ],
+  "output": "scores: [75, 90, 100]\nbackup: [75, 90, 100]\ncopy:   [70, 85, 90]\nbackup still has [75, 90, 100]\n",
+  "error": null,
+  "truncated": false,
+  "limitReason": null,
+  "limits": {
+   "max_steps": 1000,
+   "max_output_chars": 20000,
+   "max_stack_depth": 100,
+   "max_heap_objects": 200,
+   "max_collection_items": 100,
+   "max_trace_bytes": 8000000
+  },
+  "stats": {
+   "stepCount": 12,
+   "durationMs": 0,
+   "isolation": [
+    "RLIMIT_CPU",
+    "RLIMIT_FSIZE",
+    "RLIMIT_CORE",
+    "RLIMIT_NOFILE",
+    "RLIMIT_NPROC"
+   ]
+  }
+ }
+}

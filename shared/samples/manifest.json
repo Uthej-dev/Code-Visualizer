@@ -1,0 +1,12 @@
+[
+  {"id": "variables", "file": "01_variables.py", "title": "Variable assignments", "description": "Create variables of different types and re-assign one of them.", "concepts": ["variables", "types", "print"]},
+  {"id": "add", "file": "02_add_numbers.py", "title": "Add two numbers", "description": "Read two variables, add them and store the result.", "concepts": ["arithmetic", "assignment"]},
+  {"id": "largest", "file": "03_largest_number.py", "title": "Find the largest number", "description": "Compare three numbers with if / elif / else.", "concepts": ["conditions", "comparisons", "elif"]},
+  {"id": "loop", "file": "04_loop_list.py", "title": "Loop through a list", "description": "Visit every item of a list with a for loop and keep a running total.", "concepts": ["for loop", "list", "accumulator"]},
+  {"id": "search", "file": "05_search.py", "title": "Search for an element", "description": "Linear search with a while loop and break.", "concepts": ["while loop", "indexing", "break"]},
+  {"id": "modify-list", "file": "06_modify_list.py", "title": "Modify a list", "description": "Mutation vs. re-binding, and two names sharing one list.", "concepts": ["mutation", "references", "aliasing"]},
+  {"id": "function", "file": "07_function_call.py", "title": "Call a function", "description": "Frames, parameters, local variables and return values.", "concepts": ["functions", "return", "call stack"]},
+  {"id": "factorial", "file": "08_recursion.py", "title": "Recursive factorial", "description": "Watch the call stack grow and shrink during recursion.", "concepts": ["recursion", "call stack", "base case"]},
+  {"id": "dictionary", "file": "09_dictionary.py", "title": "Dictionary updates", "description": "Add, update and delete dictionary keys.", "concepts": ["dict", "keys", "mutation"]},
+  {"id": "error", "file": "10_common_error.py", "title": "A common programming error", "description": "An off-by-one loop that causes an IndexError.", "concepts": ["IndexError", "debugging", "off-by-one"]}
+]

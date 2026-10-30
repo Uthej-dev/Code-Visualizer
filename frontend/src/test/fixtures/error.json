@@ -1,0 +1,1102 @@
+{
+ "code": "# A common bug: reading past the end of a list.\ntemperatures = [21, 19, 24]\ni = 0\nwhile i <= len(temperatures):   # bug: should be <, not <=\n    print(\"Reading\", i, \"is\", temperatures[i])\n    i = i + 1\nprint(\"Done\")                    # never reached\n",
+ "trace": {
+  "version": 1,
+  "status": "error",
+  "steps": [
+   {
+    "index": 0,
+    "eventId": "e1",
+    "event": "line",
+    "line": 2,
+    "endLine": 2,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 2,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "temperatures",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "21"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "19"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "24"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "temperatures",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "ref",
+       "id": "o1"
+      }
+     }
+    ],
+    "heapChanges": [
+     {
+      "id": "o1",
+      "kind": "created",
+      "changed": [],
+      "added": [],
+      "removed": []
+     }
+    ],
+    "summary": "Assignment: temperatures = [21, 19, 24]",
+    "explanation": [
+     "Create variable temperatures, which refers to a list: [21, 19, 24]"
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 1,
+    "eventId": "e2",
+    "event": "line",
+    "line": 3,
+    "endLine": 3,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 3,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "temperatures",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "i",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "0"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "21"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "19"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "24"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 0,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "i",
+      "kind": "created",
+      "before": null,
+      "after": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "0"
+      }
+     }
+    ],
+    "heapChanges": [],
+    "summary": "Assignment: i = 0",
+    "explanation": [
+     "Create variable i and store 0 in it."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 2,
+    "eventId": "e3",
+    "event": "line",
+    "line": 4,
+    "endLine": 4,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 4,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "temperatures",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "i",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "0"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "21"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "19"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "24"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 0,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "While loop, iteration 1: condition is True",
+    "explanation": [
+     "Read i \u2192 0",
+     "Read temperatures \u2192 [21, 19, 24]",
+     "Call len([21, 19, 24]) \u2192 3",
+     "Compare 0 <= 3 \u2192 True",
+     "The condition is True, so the loop body runs (iteration 1)."
+    ],
+    "exception": null,
+    "condition": {
+     "result": true
+    },
+    "loop": {
+     "line": 4,
+     "iteration": 1,
+     "ended": false
+    }
+   },
+   {
+    "index": 3,
+    "eventId": "e4",
+    "event": "line",
+    "line": 5,
+    "endLine": 5,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 5,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "temperatures",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "i",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "0"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "21"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "19"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "24"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 16,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Print to the output",
+    "explanation": [
+     "Read i \u2192 0",
+     "Read temperatures \u2192 [21, 19, 24]",
+     "Read i \u2192 0",
+     "Look up temperatures[0] \u2192 21",
+     "Printed to the output: 'Reading 0 is 21'"
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 4,
+    "eventId": "e5",
+    "event": "line",
+    "line": 6,
+    "endLine": 6,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 6,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "temperatures",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "i",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "1"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "21"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "19"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "24"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 16,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "i",
+      "kind": "rebound",
+      "before": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "0"
+      },
+      "after": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "1"
+      }
+     }
+    ],
+    "heapChanges": [],
+    "summary": "Assignment: i = i + 1",
+    "explanation": [
+     "Read i \u2192 0",
+     "Compute 0 + 1 \u2192 1",
+     "Change i from 0 to 1."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 5,
+    "eventId": "e6",
+    "event": "line",
+    "line": 4,
+    "endLine": 4,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 4,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "temperatures",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "i",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "1"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "21"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "19"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "24"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 16,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "While loop, iteration 2: condition is True",
+    "explanation": [
+     "Read i \u2192 1",
+     "Read temperatures \u2192 [21, 19, 24]",
+     "Call len([21, 19, 24]) \u2192 3",
+     "Compare 1 <= 3 \u2192 True",
+     "The condition is True, so the loop body runs (iteration 2)."
+    ],
+    "exception": null,
+    "condition": {
+     "result": true
+    },
+    "loop": {
+     "line": 4,
+     "iteration": 2,
+     "ended": false
+    }
+   },
+   {
+    "index": 6,
+    "eventId": "e7",
+    "event": "line",
+    "line": 5,
+    "endLine": 5,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 5,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "temperatures",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "i",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "1"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "21"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "19"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "24"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 32,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Print to the output",
+    "explanation": [
+     "Read i \u2192 1",
+     "Read temperatures \u2192 [21, 19, 24]",
+     "Read i \u2192 1",
+     "Look up temperatures[1] \u2192 19",
+     "Printed to the output: 'Reading 1 is 19'"
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 7,
+    "eventId": "e8",
+    "event": "line",
+    "line": 6,
+    "endLine": 6,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 6,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "temperatures",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "i",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "21"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "19"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "24"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 32,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "i",
+      "kind": "rebound",
+      "before": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "1"
+      },
+      "after": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "2"
+      }
+     }
+    ],
+    "heapChanges": [],
+    "summary": "Assignment: i = i + 1",
+    "explanation": [
+     "Read i \u2192 1",
+     "Compute 1 + 1 \u2192 2",
+     "Change i from 1 to 2."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 8,
+    "eventId": "e9",
+    "event": "line",
+    "line": 4,
+    "endLine": 4,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 4,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "temperatures",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "i",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "21"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "19"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "24"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 32,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "While loop, iteration 3: condition is True",
+    "explanation": [
+     "Read i \u2192 2",
+     "Read temperatures \u2192 [21, 19, 24]",
+     "Call len([21, 19, 24]) \u2192 3",
+     "Compare 2 <= 3 \u2192 True",
+     "The condition is True, so the loop body runs (iteration 3)."
+    ],
+    "exception": null,
+    "condition": {
+     "result": true
+    },
+    "loop": {
+     "line": 4,
+     "iteration": 3,
+     "ended": false
+    }
+   },
+   {
+    "index": 9,
+    "eventId": "e10",
+    "event": "line",
+    "line": 5,
+    "endLine": 5,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 5,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "temperatures",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "i",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "2"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "21"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "19"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "24"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 48,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "Print to the output",
+    "explanation": [
+     "Read i \u2192 2",
+     "Read temperatures \u2192 [21, 19, 24]",
+     "Read i \u2192 2",
+     "Look up temperatures[2] \u2192 24",
+     "Printed to the output: 'Reading 2 is 24'"
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 10,
+    "eventId": "e11",
+    "event": "line",
+    "line": 6,
+    "endLine": 6,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 6,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "temperatures",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "i",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "21"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "19"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "24"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 48,
+    "changes": [
+     {
+      "frameId": "global",
+      "name": "i",
+      "kind": "rebound",
+      "before": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "2"
+      },
+      "after": {
+       "kind": "prim",
+       "type": "int",
+       "repr": "3"
+      }
+     }
+    ],
+    "heapChanges": [],
+    "summary": "Assignment: i = i + 1",
+    "explanation": [
+     "Read i \u2192 2",
+     "Compute 2 + 1 \u2192 3",
+     "Change i from 2 to 3."
+    ],
+    "exception": null,
+    "condition": null,
+    "loop": null
+   },
+   {
+    "index": 11,
+    "eventId": "e12",
+    "event": "line",
+    "line": 4,
+    "endLine": 4,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 4,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "temperatures",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "i",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "21"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "19"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "24"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 48,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "While loop, iteration 4: condition is True",
+    "explanation": [
+     "Read i \u2192 3",
+     "Read temperatures \u2192 [21, 19, 24]",
+     "Call len([21, 19, 24]) \u2192 3",
+     "Compare 3 <= 3 \u2192 True",
+     "The condition is True, so the loop body runs (iteration 4)."
+    ],
+    "exception": null,
+    "condition": {
+     "result": true
+    },
+    "loop": {
+     "line": 4,
+     "iteration": 4,
+     "ended": false
+    }
+   },
+   {
+    "index": 12,
+    "eventId": "e13",
+    "event": "exception",
+    "line": 5,
+    "endLine": 5,
+    "frameId": "global",
+    "funcName": "Global frame",
+    "stack": [
+     {
+      "id": "global",
+      "name": "Global frame",
+      "line": 5,
+      "isGlobal": true,
+      "depth": 0,
+      "locals": [
+       {
+        "name": "temperatures",
+        "value": {
+         "kind": "ref",
+         "id": "o1"
+        }
+       },
+       {
+        "name": "i",
+        "value": {
+         "kind": "prim",
+         "type": "int",
+         "repr": "3"
+        }
+       }
+      ],
+      "returnValue": null
+     }
+    ],
+    "heap": {
+     "o1": {
+      "id": "o1",
+      "type": "list",
+      "items": [
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "21"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "19"
+       },
+       {
+        "kind": "prim",
+        "type": "int",
+        "repr": "24"
+       }
+      ],
+      "length": 3,
+      "truncated": false
+     }
+    },
+    "outputLength": 48,
+    "changes": [],
+    "heapChanges": [],
+    "summary": "IndexError raised on line 5",
+    "explanation": [
+     "Read i \u2192 3",
+     "Read temperatures \u2192 [21, 19, 24]",
+     "Read i \u2192 3",
+     "Compute temperatures[i] \u2192 raises IndexError",
+     "Python raised IndexError: list index out of range",
+     "The program asked for a position that does not exist in the list. Valid indexes go from 0 to len(list) - 1.",
+     "Nothing caught this exception, so the program stops here."
+    ],
+    "exception": {
+     "type": "IndexError",
+     "message": "list index out of range",
+     "line": 5,
+     "uncaught": true
+    },
+    "condition": null,
+    "loop": null
+   }
+  ],
+  "output": "Reading 0 is 21\nReading 1 is 19\nReading 2 is 24\n",
+  "error": {
+   "phase": "runtime",
+   "type": "IndexError",
+   "message": "list index out of range",
+   "line": 5,
+   "column": null,
+   "hint": "The program asked for a position that does not exist in the list. Valid indexes go from 0 to len(list) - 1."
+  },
+  "truncated": false,
+  "limitReason": null,
+  "limits": {
+   "max_steps": 1000,
+   "max_output_chars": 20000,
+   "max_stack_depth": 100,
+   "max_heap_objects": 200,
+   "max_collection_items": 100,
+   "max_trace_bytes": 8000000
+  },
+  "stats": {
+   "stepCount": 13,
+   "durationMs": 0,
+   "isolation": [
+    "RLIMIT_CPU",
+    "RLIMIT_FSIZE",
+    "RLIMIT_CORE",
+    "RLIMIT_NOFILE",
+    "RLIMIT_NPROC"
+   ]
+  }
+ }
+}
